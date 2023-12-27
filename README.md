@@ -2,6 +2,7 @@
 
 
 - Backup factory block
+
 For this we use the Luci web interface to the device.
 Go to System → Backup / Flash Firmware.
 Under Save mtdblock contents select the factory mtdblock.
@@ -10,6 +11,7 @@ The name of the file has a convention of <HOSTNAME>.<Partition name>.bin (e.g. b
 Keep in mind that the factory block on each device is unique to that device and has to be treated as such.
 
 - Edit The Factory Block
+
 This is probably equivalent to brain surgery on a device LOL
 Open the factory block file with a hex editor. We use GHex on Ubuntu.
 Starting from address A0 is a row of values.
@@ -34,14 +36,14 @@ Insert the mtd-rw kernel module.
 Override the old factory block.
 
 
-### ssh into it
+## ssh into it
 
     ssh root@192.168.1.1
 
-   U: root
-   P: root
+  U: root
+  P: root
 
-### AP is on 192.168.1.1
+## AP is on 192.168.1.1
 
     scp bootloader.mtd0.bin root@192.168.1.1:/tmp
    
@@ -51,11 +53,11 @@ Override the old factory block.
     
     wget http://path/bootloader.mtd0.bin
 
-### cd to /tmp
+## cd to /tmp
    
     cd /tmp
 
-### Insert the mtd_rw module 
+## Insert the mtd_rw module 
 
 Note: (You can potentially break the router but it is rare that's why you need the permission flag)
 internet is required:
@@ -64,11 +66,11 @@ internet is required:
 
     insmod mtd-rw.ko i_want_a_brick=1
 
-### Substitute the name to match your file name
+## Substitute the name to match your file name
    
     mtd -e Bootloader -r write /tmp/bootloader.mtd0.bin Bootloader
 
-### This will happen
+## This will happen
 
 .....
 Unlocking Bootloader
@@ -77,3 +79,4 @@ Unlocking Bootloader
 Writing from /tmp/bootloader.mtd0.bin to Bootloader ... 
 
 
+<img width="800" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/IMG_20231227_135553.jpg">
