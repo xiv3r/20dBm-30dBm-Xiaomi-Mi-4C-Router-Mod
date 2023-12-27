@@ -27,7 +27,7 @@ See screenshot below
 
 
 
-Save the file under another name to show its the high power tweaked one e.g. 4C-GW.mtd2_hp.bin
+- Save the file under another name to show its the high power tweaked one e.g. 4C-GW.mtd2_hp.bin
 Replace The factory Block
 Copy the modified file to the /tmp directory on the device.
 Insert the mtd-rw kernel module.
@@ -36,12 +36,20 @@ Override the old factory block.
 
 ### ssh into it
 
-    ssh root@192.168.8.120
+    ssh root@192.168.1.1
 
-### AP is on 192.168.8.120
+   U: root
+   P: root
 
-    scp 4C-GW.mtd2_hp.bin root@192.168.8.120:/tmp
+### AP is on 192.168.1.1
 
+    scp bootloader.mtd0.bin root@192.168.1.1:/tmp
+   
+   or
+    
+    cd tmp
+    
+    wget http://path/bootloader.mtd0.bin
 
 ### cd to /tmp
    
@@ -50,6 +58,7 @@ Override the old factory block.
 ### Insert the mtd_rw module 
 
 Note: (You can potentially break the router but it is rare that's why you need the permission flag)
+internet is required:
 
     opkg update && opkg install kmod-mtd-rw
 
@@ -57,14 +66,14 @@ Note: (You can potentially break the router but it is rare that's why you need t
 
 ### Substitute the name to match your file name
    
-    mtd write /tmp/4C-GW.mtd2_hp.bin factory
+    mtd -e Bootloader -r write /tmp/bootloader.mtd0.bin Bootloader
 
 ### This will happen
 
 .....
-Unlocking factory
+Unlocking Bootloader
 .....
 
-Writing from /tmp/4C-GW.mtd2_hp.bin to factory ... 
+Writing from /tmp/bootloader.mtd0.bin to Bootloader ... 
 
-### Reboot the device
+
