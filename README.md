@@ -79,4 +79,4 @@ Unlocking Bootloader
 Writing from /tmp/bootloader.mtd0.bin to Bootloader ... 
 
 
-<img width="800" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/IMG_20231227_135553.jpg">
+<img width="300" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/IMG_20231227_135553.jpg">
