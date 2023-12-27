@@ -1,15 +1,15 @@
-# 20dBm-30dBm TX Power for Xiaom Mi 4C openwrt bootloader mod
+#  Xiaom Mi 4C Openwrt bootloader 20dBm-30dBm TX Power mod
 
 
-Backup factory block
+- Backup factory block
 For this we use the Luci web interface to the device.
 Go to System → Backup / Flash Firmware.
 Under Save mtdblock contents select the factory mtdblock.
 Click the SAVE MTDBLOCK button to download it.
-The name of the file has a convention of <HOSTNAME>.<Partition name>.bin (e.g. 4C-GW.mtd2.bin)
+The name of the file has a convention of <HOSTNAME>.<Partition name>.bin (e.g. bootloader.mtd0.bin)
 Keep in mind that the factory block on each device is unique to that device and has to be treated as such.
 
-Edit The Factory Block
+- Edit The Factory Block
 This is probably equivalent to brain surgery on a device LOL
 Open the factory block file with a hex editor. We use GHex on Ubuntu.
 Starting from address A0 is a row of values.
@@ -19,7 +19,12 @@ On the 4A 100M the value was 80 instead of C0 but the 14x pattern was still pres
 See screenshot below
 
 
-Change those values to FF.
+<img width="800" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/Screenshot_20231227_132624.jpg">
+
+## Change those values to FF (`24`)
+
+<img width="800" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/Screenshot_20231227_132730.jpg">
+
 
 
 Save the file under another name to show its the high power tweaked one e.g. 4C-GW.mtd2_hp.bin
