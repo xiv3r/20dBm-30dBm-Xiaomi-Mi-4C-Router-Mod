@@ -68,15 +68,15 @@ internet is required:
 
 ## Substitute the name to match your file name
    
-    mtd -e Bootloader -r write /tmp/bootloader.mtd0.bin Bootloader
+    mtd -e bootloader -r write /tmp/bootloader.mtd0.bin bootloader
 
 ## This will happen
 
 .....
-Unlocking Bootloader
+Unlocking bootloader
 .....
 
-Writing from /tmp/bootloader.mtd0.bin to Bootloader ... 
+Writing from /tmp/bootloader.mtd0.bin to bootloader ... 
 
 
 <img width="300" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/IMG_20231227_135553.jpg">
