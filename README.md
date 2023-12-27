@@ -13,12 +13,13 @@ Keep in mind that the factory block on each device is unique to that device and 
 - Edit The Factory Block
 
 This is probably equivalent to brain surgery on a device LOL
-Open the factory block file with a hex editor. We use GHex on Ubuntu.
-Starting from address A0 is a row of values.
-There are 14 of them.
-On my 4C it is C0.
+Open the factory block file with a hex editor. We use hex editor on Android.
+Starting from address 000000A0 25 row of values.
+There are 24 of them.
+On my 4C it is A0.
 On the 4A 100M the value was 80 instead of C0 but the 14x pattern was still present.
-See screenshot below
+
+See screenshot below;
 
 
 <img width="800" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/Screenshot_20231227_132624.jpg">
@@ -30,10 +31,10 @@ See screenshot below
 
 
 - Save the file under another name to show its the high power tweaked one e.g. 4C-GW.mtd2_hp.bin
-Replace The factory Block
+Replace The bootloader Block
 Copy the modified file to the /tmp directory on the device.
 Insert the mtd-rw kernel module.
-Override the old factory block.
+Override the old bootloader block.
 
 
 ## ssh into it
@@ -79,4 +80,4 @@ Unlocking bootloader
 Writing from /tmp/bootloader.mtd0.bin to bootloader ... 
 
 
-<img width="300" height="500" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/IMG_20231227_135553.jpg">
+<img width="400" height="800" src="https://github.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/blob/main/Main/IMG_20231227_135553.jpg">
