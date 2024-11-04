@@ -1,4 +1,4 @@
-#  Xiaom Mi 4C Openwrt factory mod increasing TX power to 20dBm-30dBm
+#  Xiaom Mi 4C Openwrt TX power mod to 1W ≤ 30dBm
 
 # Basic Modification
 
@@ -19,7 +19,7 @@ mtd -r write /tmp/mtd2.bin factory
 > After rebooting, the power will increase to 1 W (30 dBm)
 
 
-# Advance modification 
+# Advanced modification 
 
 - Backup factory/mtd2.bin block
 
