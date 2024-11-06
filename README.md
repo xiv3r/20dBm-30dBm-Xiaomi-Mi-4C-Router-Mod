@@ -4,6 +4,14 @@
 
 > This firmware includes the mtd-rw kernel module, which allows you to edit the EEPROM to increase the wireless transmitter power to 1 W (30 dBm).
 > To increase the power, install the firmware, specify the US region in the wireless module settings, connect to the router via ssh and enter the commands:
+
+# Auto set TX Burst 20dBm/30dBm
+> online mod
+```sh
+wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/refs/heads/main/mtd2-mod.sh | sh
+```
+# Manual
+> offline mod
 ```sh
 insmod mtd-rw.ko i_want_a_brick=1
 ```
@@ -16,12 +24,12 @@ printf '\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff' |dd of=/tm
 ```sh
 mtd -r write /tmp/mtd2.bin factory
 ```
-> After rebooting, the power will increase to 1 W (30 dBm)
+> After rebooting, the TX power will increase to 1 W (30 dBm)
 
 
-# Advanced modification 
+# Advanced Manual Modification of mtd2 factory
 
-- Backup factory/mtd2.bin block
+- Backup factory /mtd2.bin
 
 For this we use the Luci web interface to the device.
 Go to System → Backup / Flash Firmware.
@@ -30,7 +38,7 @@ Click the SAVE MTDBLOCK button to download it.
 The name of the file has a convention of <HOSTNAME>.<Partition name>.bin (e.g. openwrt.mtd2.bin)
 Keep in mind that the factory block on each device is unique to that device and has to be treated as such.
 
-- Edit The factory/mtd2.bin Block
+- Edit The factory /mtd2.bin
 
 This is probably equivalent to brain surgery on a device..
 Open the factory block file with a hex editor. We use hex editor on Android.
@@ -85,7 +93,7 @@ internet is required:
 
     opkg update && opkg install kmod-mtd-rw
 
-    insmod mtd-rw.ko i_want_a_brick=1
+    insmod mtd-rw i_want_a_brick=1
 
 ## Substitute the name to match your file name
    
