@@ -8,6 +8,9 @@
 # Auto set TX Burst 20dBm/30dBm
 > online mod
 ```sh
+opkg update && opkg install kmod-mtd-rw
+```
+```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/refs/heads/main/mtd2-mod.sh | sh
 ```
 # Manual
