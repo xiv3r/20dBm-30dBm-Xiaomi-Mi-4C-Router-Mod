@@ -1,6 +1,9 @@
 #!/bin/sh
 
 ###
+opkg update && opkg install kmod-mtd-rw
+echo "Done Installing mtd-rw kernel module"
+###
 insmod mtd-rw i_want_a_brick=1
 echo "insmod done...!"
 ### 
