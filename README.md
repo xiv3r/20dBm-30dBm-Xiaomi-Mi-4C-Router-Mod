@@ -16,7 +16,7 @@ wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Route
 # Manual
 > offline mod
 ```sh
-insmod mtd-rw.ko i_want_a_brick=1
+insmod mtd-rw i_want_a_brick=1
 ```
 ```sh
 dd if=/dev/mtd2 of=/tmp/mtd2.bin
@@ -27,7 +27,7 @@ printf '\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff' |dd of=/tm
 ```sh
 mtd -r write /tmp/mtd2.bin factory
 ```
-> After rebooting, the TX power will increase to 1 W (30 dBm)
+> After reboot, the TX power will increase to 1 W (30 dBm) (country: US)
 
 
 # Advanced Manual Modification of mtd2 factory
